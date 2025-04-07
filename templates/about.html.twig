@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>About</h1>
+
+    <div class="container">
+        <section class="about-text">
+            <h2>Objektorienterade webbteknologier</h2>
+
+            <p>Kursen innefattar objektorienterad PHP-programmering med kända webbramverk, enhetstestning, kodkvalitet och databaskopplingar med objekt relational mapping.</p>
+            <p>Syftet med kursen är bland annat att kunna redogöra för utveckling med objektorienterad programmering och databaser i webbmiljö, kunna tillämpa de objektorienterade programmeringsparadigmen.</p> 
+            <p>Man ska även kunna utveckla och driftsätta en webbapplikation där objektorienterad programmering i ramverk tillsammans med databaser har en central roll samt hantera de verktyg och miljöer som används vid utveckling av databasdrivna webbapplikationer i ett ramverk för webbutveckling.</p>
+        
+            <a href="{{ asset('img/mvc.jpg') }}">
+                <img src="{{ asset('img/mvc.jpg') }}" alt="">
+            </a>
+        </section>
+
+        <aside class="about-links">
+            <h3>Länkar</h3>
+            <ul>
+                <li><a href="https://github.com/dbwebb-se/mvc">Kursens Git-repo</a></li>
+                <li><a href="https://github.com/gitalsg/mvc/commits/main/">Min GitHub-repo</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+    </footer>
+
+{% endblock %}

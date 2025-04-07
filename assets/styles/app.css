@@ -1,0 +1,99 @@
+body {
+    background-color: rgba(230, 191, 136, 0.546);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+}
+
+.site-header img {
+    height: 100px;
+    margin-right: 20px;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.site-header nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+h1 {
+    border-bottom: 4px double #ab7bcfdc;
+}
+
+img {
+    height: 200px;
+}
+
+.container {
+    display: flex;
+    gap: 60px;
+    max-width: 800px;
+    padding: 30px;
+}
+
+.about-text {
+    flex: 2;
+    padding: 20px;
+}
+
+.about-links {
+    flex: 1;
+    border-radius: 6px;
+    padding: 20px;
+    border: 2px solid #9057b173;
+}
+
+.left {
+    flex: 1;
+    border-radius: 6px;
+    padding: 20px;
+    border: 2px solid #9057b173;
+    background-color: aqua;
+}
+
+.right {
+    flex: 1;
+    border-radius: 6px;
+    padding: 20px;
+    border: 2px solid #9057b173;
+    background-color: aquamarine;
+}
+
+.site-footer {
+    background-color: #e19c6bcf;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}

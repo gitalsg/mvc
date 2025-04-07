@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Home</h1>
+    <h2>Här är en kort presentation av mig:</h2>
+
+    <p>Mitt namn är Alexandra och jag studerar sista kursen i kurspaketet Webbprogrammering.</p>
+    <p>Jag upptäckte kurspaketet av en slump och tyckte det verkade mycket intressant så jag bestämde mig för att lära mig mer av programmeringsvärlden.</p>
+
+    <a href="{{ asset('img/mephoto.jpg') }}">
+        <img src="{{ asset('img/mephoto.jpg') }}" alt="">
+    </a>
+
+    <footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+    </footer>
+
+{% endblock %}

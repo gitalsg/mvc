@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+    <h1>Magic number</h1>
+
+<div class="container">
+    <aside class="left">
+        <h3>Luck</h3>
+        <a href="{{ asset('img/lucky.jpg') }}">
+            <img src="{{ asset('img/lucky.jpg') }}" alt="Lucky">
+        </a>
+    </aside>
+
+    <section class="about-text">
+        <h2>Här kommer visas ett slumpmässigt nummer:</h2>
+        <p>Det magiska numret är: {{ number }}</p>
+    </section>
+
+    <aside class="right">
+        <h3>Luck</h3>
+        <a href="{{ asset('img/luckynum.jpg') }}">
+            <img src="{{ asset('img/luckynum.jpg') }}" alt="Luckynumber">
+        </a>
+    </aside>
+</div>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
