@@ -2,6 +2,7 @@ body {
     background-color: rgba(230, 191, 136, 0.546);
     margin: 0 auto;
     max-width: 1200px;
+    font-size: 1em;
 }
 
 .site-header {
@@ -96,4 +97,32 @@ img {
     padding: 20px;
     margin-top: 40px;
     font-size: 14px;
+}
+
+input {
+    font-size: 1em;
+}
+
+.die {
+    font-size: 2em;
+}
+
+.flash-notice {
+    padding: 0.5em;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.flash-warning:before {
+    content: "⚠";
 }
