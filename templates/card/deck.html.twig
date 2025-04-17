@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Deck of card{% endblock %}
+
+{% block body %}
+
+<h1>All cards</h1>
+<div class="deck">
+    {% for card in card %}
+        {% set colorClass = (card.getColor() in ['Hearts', 'Diamonds']) ? 'red' : 'black' %}
+        <span class="card {{ colorClass }}">
+            [{{ card.getAsString() }}]
+        </span>
+        {% if loop.index % 13 == 0 %}<br>{% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

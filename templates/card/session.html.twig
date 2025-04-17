@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Session details{% endblock %}
+
+{% block body %}
+<h1>Session Details</h1>
+
+{% if sessionData is empty %}
+        <p><strong>The session is empty.</strong></p>
+    {% else %}
+        <pre>{{ dump(sessionData) }}</pre>
+    {% endif %}
+
+    {{ include('flash.html.twig') }}
+
+    <p><a href="{{ path('session_delete') }}">Clear the session</a></p>
+
+{% endblock %}

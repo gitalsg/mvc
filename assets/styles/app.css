@@ -126,3 +126,17 @@ input {
 .flash-warning:before {
     content: "⚠";
 }
+
+.card {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 6px;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
