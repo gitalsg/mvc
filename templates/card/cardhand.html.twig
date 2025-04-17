@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw a card{% endblock %}
+
+{% block body %}
+
+<h1>See your hand from the cards you drew</h1>
+
+{% if drawnCards is defined and drawnCards|length > 0 %}
+    <div class="card">
+        {% for card in drawnCards %}
+            {% set colorClass = (card.getColor() in ['Hearts', 'Diamonds']) ? 'red' : 'black' %}
+
+            <span class="card {{ colorClass }}">
+                [{{ card.getAsString() }}]
+            </span>
+        {% endfor %}
+    </div>
+    
+    {% else %}
+        <p>No more cards left, shuffle a new deck of cards!</p>
+    {% endif %}
+
+    <p>Remaining cards: {{ remaining }}</p>
+
+{% endblock %}

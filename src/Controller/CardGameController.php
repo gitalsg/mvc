@@ -91,4 +91,34 @@ class CardGameController extends AbstractController
             'hand' => $hand->getString()
         ]);
     }
+
+    #[Route("/card/deck/draw/{num<\d+>}", name: "draw_some_cards")]
+    public function drawCards(int $num, SessionInterface $session): Response
+    {
+        if ($num > 52) {
+            throw new \Exception("Can not draw more than 52 cards!");
+        }
+
+        $deck = $session->get('deck') ?? new DeckOfCards();
+        $hand = $session->get('hand') ?? new CardHand();
+
+        $drawn = [];
+        for ($i = 0; $i < $num; $i++) {
+            $card = $deck->takeCard();
+            if (!$card) {
+                break;
+            }
+            $drawn[] = $card;
+            $hand->add($card);
+        }
+
+        $session->set('deck', $deck);
+        $session->set('hand', $hand);
+
+        return $this->render('card/cardhand.html.twig', [
+            'drawnCards' => $drawn,
+            'remaining' => $deck->getRemainingDeck(),
+            'sessionHand' => $hand->getString()
+        ]);
+    }
 }
