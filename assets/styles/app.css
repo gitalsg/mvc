@@ -127,6 +127,13 @@ input {
     content: "⚠";
 }
 
+.flash-success {
+    padding: 0.5em;
+    color: rgba(74, 112, 18, 0.936);
+    background-color: rgba(89, 219, 89, 0.674);
+    border-color: rgba(60, 91, 20, 0.832);
+}
+
 .card {
     display: inline-block;
     font-size: 1.5em;

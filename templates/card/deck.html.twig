@@ -5,6 +5,9 @@
 {% block body %}
 
 <h1>All cards</h1>
+
+{{ include('flash.html.twig') }}
+
 <div class="deck">
     {% for card in card %}
         {% set colorClass = (card.getColor() in ['Hearts', 'Diamonds']) ? 'red' : 'black' %}

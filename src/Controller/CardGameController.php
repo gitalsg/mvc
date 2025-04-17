@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Card\Card;
 use App\Card\CardGraphic;
+use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -56,10 +57,14 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck/shuffle", name: "deck_shuffle")]
-    public function deckOfCardsShuffle(): Response
+    public function deckOfCardsShuffle(SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
         $deck->shuffle();
+
+        $session->set("deck", $deck);
+
+        $this->addFlash('success', 'The deck of cards have been shuffled!');
 
         $data = [
             "card" => $deck->all(),
@@ -67,5 +72,23 @@ class CardGameController extends AbstractController
         ];
 
         return $this->render('card/deck.html.twig', $data);
+    }
+
+    #[Route("/card/deck/draw", name: "draw_a_card")]
+    public function drawACard(SessionInterface $session): Response
+    {
+        $deck = $session->get('deck') ?? new DeckOfCards();
+        $hand = $session->get('hand') ?? new CardHand();
+
+        $card = $deck->takeCard();
+
+        $session->set('deck', $deck);
+        $session->set('hand', $hand);
+
+        return $this->render('card/drawcard.html.twig', [
+            'card' => $card,
+            'remaining' => $deck->getRemainingDeck(),
+            'hand' => $hand->getString()
+        ]);
     }
 }
