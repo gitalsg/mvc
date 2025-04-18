@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Card\DeckOfCards;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class LuckyControllerJson extends AbstractController
 {
@@ -46,4 +49,49 @@ class LuckyControllerJson extends AbstractController
         );
         return $response;
     }
+
+    #[Route("/api/deck", name: "deck_sorted", methods: ['GET'])]
+    public function deckSorted(): Response
+    {
+        $deck = new DeckOfCards();
+
+        $cards = array_map(function ($card) {
+            return [
+                'suit' => $card->getColor(),
+                'value' => $card->getNumber(),
+                'string' => $card->getAsString()
+            ];
+        }, $deck->all());
+    
+        $response = new JsonResponse($cards);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+        }
+
+    #[Route("/api/deck/shuffle", name: "deck_shuffled")]
+    public function deckShuffled(SessionInterface $session): Response
+    {
+        $deck = new DeckOfCards();
+        $deck->shuffle();
+
+        $session->set("deck", $deck);
+
+        $cards = array_map(fn($card) => [
+            'suit' => $card->getColor(),
+            'value' => $card->getNumber(),
+            'string' => $card->getAsString()
+        ], $deck->all());
+    
+        $response = new JsonResponse([
+            'deck' => $cards
+        ]);
+
+            $response->setEncodingOptions(
+                $response->getEncodingOptions() | JSON_PRETTY_PRINT
+            );
+        return $response;
+        }
 }
