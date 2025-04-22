@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kmom02{% endblock %}
+
+{% block body %}
+    <h1>Kmom02</h1>
+    <h2>Redovisningstext Kmom02:</h2>
+    <p>De objektorienterade konstruktionerna har olika funktionalitet, vilket var lite svårt att greppa i början. Arv används för att på ett sätt ”förlänga” en klass och på så vis återanvända kod; den ärver metoder från en annan klass via ”extends” i PHP. Komposition används för att kombinera instanser och funktionalitet; klassen innehåller objekt från andra klasser vilket gör att man kan sammansätta funktionaliteten på ett annat sätt jämför med arv, där det är hårdare kopplat till den ursprungliga klassen. Interface är mer som ett kontrakt där man anger att vissa metoder bör uppfyllas, de måste implementeras. Metoderna måste här deklareras som publika. Det sista är trait; syftet med trait är möjliggörandet av återanvändning av klasser men utan att ärva från dem. Man använder sig av de genom ”use” i PHP.</p>
+    <p>För att lösa uppgiften så skapade jag fyra klasser; Card, CardHand, CardGraphic samt DeckOfCards. Card används som ”huvudklassen” som är själva grunden för resterande klasser. I Card anger jag det som ett kort är. Sedan har jag CardGraphic som är själva representationen av ett kort; det används i sin tur i DeckOfCards för att visa upp hela kortleken. I CardHand kan man addera ett kort och ha en hand av kort att visa upp. Jag är nöjd med uppbyggnaden och hur jag löste uppgiften. Det var utmanande att i början veta hur man skulle bygga upp sina klasser men ju mer man skapade olika funktioner desto mer kunde man ändra sina klasser för att uppfylla funktionaliteten.</p>
+    <p>Att jobba i Symfony är för mig lite svårt; jag har svårt att få grepp på hur det egentligen fungerar. Det är många filer och mycket kod som Symfony skeleton ger som jag inte har koll på vad den gör. Men i det stora hela så känns det som ett användbart verktyg och någorlunda smidigt att jobba med när man väl har kommit in i det.</p>
+    <p>Min TIL för detta kmom är att ha bra koll på alla olika delar som behövs för att bygga ett bra API. Vara organiserad med sin kod och försöka tänka några steg framåt för att underlätta det framtida arbetet. Det gör stor skillnad när man redan har en bra grund så det är viktigt att vara noga från början.</p>
+<footer class="site-footer">
+    <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
