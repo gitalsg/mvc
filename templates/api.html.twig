@@ -8,25 +8,49 @@
     <body>
         <h1>All working APIs</h1>
 
-        <p>You will find all the available APIs here:</p>
+        <h2>Routes and their details:</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Route</th>
-                    <th>Information</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>/api/</td>
-                    <td>Overview for all available APIs</td>
-                </tr>
-                <tr>
-                    <td>/api/quote</td>
-                    <td>Shows a random quote with some date and time details</td>
-                </tr>
-            </tbody>
-        </table>
+        <p> - /api/ - shows an overview for all available APIs</p>
+
+        <p> - /api/quote - shows a random quote with some date and time details</p>
+
+            <li><a href="{{ path('quotes') }}">Quotes</a></li>
+
+        <p> - /api/deck - shows you all cards sorted from a deck</p>
+
+            <li><a href="{{ path('deck_sorted') }}">Sorted deck</a></li>
+
+        <p> - /api/deck/shuffle - shuffles the deck and show you all the shuffled cards.</p>
+        <p>A sessions is started when you shuffle the deck. If you are out of cards, shuffle again.</p>
+
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="shuffle" value="Shuffle"
+                    onClick="this.form.action='{{ path('deck_shuffled') }}';"
+                >
+            </p>
+        </form>
+
+        <p> - /api/deck/draw - to draw a card from the deck. You can also see how many cards are left in the deck.</p>
+
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="draw" value="Draw one card"
+                    onClick="this.form.action='{{ path('api_draw_a_card') }}';"
+                >
+            </p>
+        </form>
+
+        <p> - /api/deck/draw/:number - to draw a specific number of cards (more than 2). You can also see how many cards are left in the deck.</p>
+
+        <form method="post" action="">
+            <p>
+                <input type="number" name="num" value="2" min="1" max="52">
+                <input type="submit" name="draw" value="Draw cards"
+                    onClick="this.form.action='{{ path('api_draw_some_cards', { num: 0 }) }}'.replace('0', this.form.num.value);"
+                >
+            </p>
+        </form>
+
     </body>
 </html>

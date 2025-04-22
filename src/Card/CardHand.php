@@ -40,4 +40,9 @@ class CardHand
         }
         return $values;
     }
+
+    public function getCards(): array
+    {
+        return $this->hand;
+    }
 }
