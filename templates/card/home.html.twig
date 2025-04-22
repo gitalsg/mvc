@@ -5,8 +5,13 @@
 {% block body %}
 <h1>Card game</h1>
 
-<p>Card Card Game Game text text <a href="https://en.wikipedia.org/wiki/Pig_(dice_game)"> 
-basics of the game on Wikipedia</a>.</p>
+<p>In kmom02 a card game has been created. In this game, you can see a card deck with all the cards sortered. You can shuffle a deck and see the cards all shuffleled.</p>
+
+<p> A session is also created when you shuffle the cards and you can see the seesion by clicking on the link, where you can delete the session as well.</p>
+
+<p> You can draw a random card from the deck. Once there, you can choose to draw several cards by just adding the number to the URL.<p>
+
+<p> You can find all the links here below:</p>
 
 <nav>
     <ul>
@@ -16,5 +21,19 @@ basics of the game on Wikipedia</a>.</p>
         <li><a href="{{ path('draw_a_card') }}">Draw a card</a></li>
     </ul>
 </nav>
+
+<h2>Structure for the card game</h2>
+
+<p>Four classes have been created for this card game. The classes are Card, CardGraphic, CardHand and DeckOfCards.</p>
+<p>The class Card has been created for the individual card with a color and number. We have then the extension of the class, CardGraphic which have the representation in symbols for the cards.</p>
+<p>Class CardHand uses the class Card; this class is for a handfull of cards, the onew that have been drawn from the deck. We have then the class DeckOfCards is the class for the whole deck which have different functions to shuffle or take a card from the deck. This class uses the class CardGraphic.</p>
+
+<a href="{{ asset('img/uml.jpg') }}">
+        <img src="{{ asset('img/uml.jpg') }}" alt="">
+</a>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
 
 {% endblock %}

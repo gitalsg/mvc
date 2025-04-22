@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PresentationControllerTwig extends AbstractController
 {
-
     #[Route("/", name: "presentation")]
     public function presentation(): Response
     {

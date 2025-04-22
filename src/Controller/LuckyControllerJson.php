@@ -6,7 +6,6 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +14,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class LuckyControllerJson extends AbstractController
 {
-
     #[Route("/api/", name: "api")]
     public function api(): Response
     {
@@ -65,14 +63,14 @@ class LuckyControllerJson extends AbstractController
                 'string' => $card->getAsString()
             ];
         }, $deck->all());
-    
+
         $response = new JsonResponse($cards);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
 
         return $response;
-        }
+    }
 
     #[Route("/api/deck/shuffle", name: "deck_shuffled", methods: ['POST'])]
     public function deckShuffled(SessionInterface $session): Response
@@ -82,21 +80,21 @@ class LuckyControllerJson extends AbstractController
 
         $session->set("deck", $deck);
 
-        $cards = array_map(fn($card) => [
+        $cards = array_map(fn ($card) => [
             'suit' => $card->getColor(),
             'value' => $card->getNumber(),
             'string' => $card->getAsString()
         ], $deck->all());
-    
+
         $response = new JsonResponse([
             'deck' => $cards
         ]);
 
-            $response->setEncodingOptions(
-                $response->getEncodingOptions() | JSON_PRETTY_PRINT
-            );
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
         return $response;
-        }
+    }
 
     #[Route("/api/deck/draw", name: "api_draw_a_card", methods: ['POST'])]
     public function drawACardApi(SessionInterface $session): Response
@@ -121,8 +119,8 @@ class LuckyControllerJson extends AbstractController
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
-                $response->getEncodingOptions() | JSON_PRETTY_PRINT
-            );
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
 
         return $response;
     }

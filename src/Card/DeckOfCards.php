@@ -43,9 +43,9 @@ class DeckOfCards
     public function getAsString(): array
     {
         $result = [];
-            foreach ($this->deck as $card) {
-                $result[] = $card->getAsString();
-            }
+        foreach ($this->deck as $card) {
+            $result[] = $card->getAsString();
+        }
         return $result;
     }
 }
