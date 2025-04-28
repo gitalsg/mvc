@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+<h1>Game 21</h1>
+
+<h2>Kortspel 21</h2>
+
+<p>Kortspelet 21 går ut på att få ett sammanlagdt värde av 21; kortens värde får inte överstiga 21.</p>
+<h3>Regler:</h3>
+<p>Det ska finnas en bankir som påbörjar spelet. Denna delar ut kort till en spelare i taget. Spelaren tar ett kort tills dess att den är nöjd med värdet på sina kort.</p>
+<p>Om värdet understiger 21 så är det bankirens tur att plocka kort. Om värdet överstiger 21 vinner banken.</p>
+<p>Spelare vinner om värdet är högre än bankirens. Vid lika eller högre så vinner bankiren.</p>
+
+<p>Påbörja ett spel här: <a href="{{ path('card_start') }}">Card game</a></p>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
