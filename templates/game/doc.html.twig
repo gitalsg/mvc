@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game Doc{% endblock %}
+
+{% block body %}
+<h1>Game Doc</h1>
+
+<h2>Doc</h2>
+
+<p>text text</p>
+
+<p>Spelets flödesschema:</p>
+
+<a href="{{ asset('img/flödesschema.png') }}">
+        <img src="{{ asset('img/flödesschema.png') }}" alt="">
+</a>
+
+<p>Här är pseudokod för hur spelets kan skapas:</p>
+
+<a href="{{ asset('img/pseudokod1.png') }}">
+        <img src="{{ asset('img/pseudokod1.png') }}" alt="">
+
+<a href="{{ asset('img/pseudokod2.png') }}">
+        <img src="{{ asset('img/pseudokod2.png') }}" alt="">
+</a>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
