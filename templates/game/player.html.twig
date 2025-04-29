@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Deck of cards{% endblock %}
+
+{% block body %}
+
+<h1>See card</h1>
+
+<p>text text</p>
+
+{% if card %}
+    {% set colorClass = (card.getColor() in ['Hearts', 'Diamonds']) ? 'red' : 'black' %}
+    <span class="card {{ colorClass }}">
+        [{{ card.getAsString() }}]
+    </span>
+
+    {% else %}
+        <p>No more cards left, shuffle a new deck of cards!</p>
+    {% endif %}
+
+    <p>Värde: {{ card.getNumber() }}</p>
+
+    <p>Remaining cards: {{ remaining }}</p>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
