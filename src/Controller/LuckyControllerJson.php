@@ -163,4 +163,30 @@ class LuckyControllerJson extends AbstractController
 
         return $response;
     }
+
+    #[Route("/api/game", name: "api_card_game", methods: ['GET'])]
+    public function cardGameApi(SessionInterface $session): Response
+    {
+        $playerHand = $session->get("player_hand");
+        $bankHand = $session->get("bank_hand");
+
+        $totalValuePlayer = $playerHand->getTotalValue();
+        $totalValueBank = $bankHand->getTotalValue();
+
+        $data = [
+            'player' => [
+                'totalPlayer' => $totalValuePlayer
+            ],
+            'bank' => [
+                'totalBank' => $totalValueBank
+            ],
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
 }
