@@ -4,7 +4,7 @@ namespace App\Game;
 
 use App\Game\Card;
 
-class CardHandPlayer
+class CardHandBank
 {
     private array $hand = [];
 

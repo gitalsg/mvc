@@ -9,11 +9,13 @@
 
 <p>Kortspelet 21 går ut på att få ett sammanlagdt värde av 21; kortens värde får inte överstiga 21.</p>
 <h3>Regler:</h3>
-<p>Det ska finnas en bankir som påbörjar spelet. Denna delar ut kort till en spelare i taget. Spelaren tar ett kort tills dess att den är nöjd med värdet på sina kort.</p>
-<p>Om värdet understiger 21 så är det bankirens tur att plocka kort. Om värdet överstiger 21 vinner banken.</p>
-<p>Spelare vinner om värdet är högre än bankirens. Vid lika eller högre så vinner bankiren.</p>
+<p>Det finns en spelare och en bankir; spelaren påbörjar spelet. Man får ett kort och kan sedan välja om man vill ha fler eller inte. Spelaren tar ett kort tills dess att den är nöjd med det totala värdet på sina kort.</p>
+<p>Blir värdet över 21 så vinner bankiren automatisk. Om värdet understiger 21 och man är nöjd med sina kort så blir det bankirens tur att plocka kort. Om bankirens värdet överstiger 21 vinner spelaren automatisk. Annars visas resultatet i sista sidan där an även kan starta ett nytt spel.</p>
+<p>Spelaren vinner om värdet är högre än bankirens. Vid lika eller högre så vinner bankiren.</p>
 
 <p>Här finnes dokumentationssidan: <a href="{{ path('game_doc') }}">Doc</a></p>
+
+<h3>STARTA SPELET HÄR: <a href="{{ path('game_init_get') }}">Game 21</a></h3>
 
 <footer class="site-footer">
         <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>

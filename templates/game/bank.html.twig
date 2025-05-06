@@ -4,9 +4,11 @@
 
 {% block body %}
 
-<h1>PLAYER</h1>
+<h1>Bank</h1>
 
-<h2>Players hand:</h2>
+{{ include('flash.html.twig') }}
+
+<h2>Banks hand:</h2>
 
 {% for cardInHand in hand.getCards() %}
     {% set colorClass = (cardInHand.getColor() in ['Hearts', 'Diamonds']) ? 'red' : 'black' %}
@@ -15,17 +17,14 @@
     </span>
 
     {% else %}
-        <p>Take a card.</p>
+        <p>No cards in bank's hand.</p>
     {% endfor %}
 
     <p>Total value : {{ total }}</p>
 
-<form action="{{ path('game_player_morecards') }}" method="post">
-    <button type="submit" name="moreCards" value="more">Take a card</button>
-    <button type="submit" name="moreCards" value="no">No more</button>
+<form action="{{ path('end_game') }}" method="get">
+    <button type="submit">See the result</button>
 </form>
-
-{{ include('flash.html.twig') }}
 
 <footer class="site-footer">
         <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>

@@ -18,7 +18,12 @@ class Card
         return $this->color;
     }
 
-    public function getNumber(): int
+    public function getNumber(): string
+    {
+        return $this->number;
+    }
+    
+    public function getNumberValue(): int
     {
         return match ($this->number) {
             'A' => 14,

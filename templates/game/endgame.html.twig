@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}End game{% endblock %}
+
+{% block body %}
+
+<h1>END GAME</h1>
+
+<p>Result:</p>
+
+{{ include('flash.html.twig') }}
+
+<p>You can start a new game here: <a href="{{ path('game_init_get') }}">Game 21</a></p>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}
