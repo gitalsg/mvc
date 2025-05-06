@@ -6,6 +6,9 @@ use App\Game\Card;
 
 class CardHandPlayer
 {
+    /**
+     * @var Card[]
+     */
     private array $hand = [];
 
     public function addCard(Card $take): void
@@ -18,6 +21,9 @@ class CardHandPlayer
         return count($this->hand);
     }
 
+    /**
+     * @return int[]
+     */
     public function getValues(): array
     {
         $values = [];
@@ -51,6 +57,9 @@ class CardHandPlayer
         return $totalValue;
     }
 
+    /**
+     * @return string[]
+     */
     public function getString(): array
     {
         $values = [];
@@ -60,6 +69,9 @@ class CardHandPlayer
         return $values;
     }
 
+    /**
+     * @return Card[]
+     */
     public function getCards(): array
     {
         return $this->hand;

@@ -6,6 +6,9 @@ use App\Card\CardGraphic;
 
 class DeckOfCards
 {
+    /**
+     * @var Card[]
+     */
     private array $deck = [];
 
     public function __construct()
@@ -25,6 +28,9 @@ class DeckOfCards
         shuffle($this->deck);
     }
 
+    /**
+     * @return Card[]
+     */
     public function all(): array
     {
         return $this->deck;
@@ -40,6 +46,9 @@ class DeckOfCards
         return count($this->deck);
     }
 
+    /**
+    * @return string[]
+     */
     public function getAsString(): array
     {
         $result = [];

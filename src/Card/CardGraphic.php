@@ -4,7 +4,10 @@ namespace App\Card;
 
 class CardGraphic extends Card
 {
-    private $representation = [
+    /**
+    * @var array<string, string>
+    */
+    private array $representation = [
         'Hearts' => '♥',
         'Diamonds' => '♦',
         'Clubs' => '♣',

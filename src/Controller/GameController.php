@@ -27,24 +27,6 @@ class GameController extends AbstractController
         return $this->render('game/doc.html.twig');
     }
 
-    #[Route("/game/deck/shuffle", name: "deck_shuffle")]
-    public function deckOfCardsShuffle(SessionInterface $session): Response
-    {
-        $deck = new DeckOfCards();
-        $deck->shuffle();
-
-        $session->set("deck", $deck);
-
-        $this->addFlash('success', 'The deck of cards have been shuffled!');
-
-        $data = [
-            "card" => $deck->all(),
-            "cardString" => $deck->getAsString(),
-        ];
-
-        return $this->render('game/game.html.twig', $data);
-    }
-
     #[Route("/game/init", name: "game_init_get", methods: ['GET'])]
     public function init(): Response
     {
@@ -105,12 +87,14 @@ class GameController extends AbstractController
 
             if ($totalValue == 21) {
                 $this->addFlash(
-                    'warning','You got 21; it is the banks turn now!'
+                    'warning',
+                    'You got 21; it is the banks turn now!'
                 );
                 return $this->redirectToRoute('game_bank');
             } elseif ($totalValue > 21) {
                 $this->addFlash(
-                    'notice', 'You got over 21; you lost!'
+                    'notice',
+                    'You got over 21; you lost!'
                 );
                 return $this->redirectToRoute('end_game');
             }
@@ -123,7 +107,8 @@ class GameController extends AbstractController
 
         if ($moreCards === 'no') {
             $this->addFlash(
-                'notice','You chosed to stand; it is the banks turn now!'
+                'notice',
+                'You chosed to stand; it is the banks turn now!'
             );
             return $this->redirectToRoute('game_bank');
         }
@@ -140,21 +125,22 @@ class GameController extends AbstractController
         $session->set('deck', $deck);
         $session->set('bank_hand', $bankHand);
 
-            while ($bankHand->getTotalValue() < 17) {
-                $card = $deck->takeCard();
-                $bankHand->addCard($card);
-            }
+        while ($bankHand->getTotalValue() < 17) {
+            $card = $deck->takeCard();
+            $bankHand->addCard($card);
+        }
 
-            $totalValue = $bankHand->getTotalValue();
+        $totalValue = $bankHand->getTotalValue();
 
-            if ($totalValue > 21) {
-                $this->addFlash(
-                    'warning', 'The bank got over 21!'
-                );
-                return $this->redirectToRoute('end_game');
-            }
+        if ($totalValue > 21) {
+            $this->addFlash(
+                'warning',
+                'The bank got over 21!'
+            );
+            return $this->redirectToRoute('end_game');
+        }
 
-            $session->set('bank_hand', $bankHand);
+        $session->set('bank_hand', $bankHand);
 
         return $this->render('game/bank.html.twig', [
             "remaining" => $deck->getRemainingDeck(),
@@ -174,18 +160,26 @@ class GameController extends AbstractController
 
         if ($playerTotalValue > 21) {
             $this->addFlash(
-                'warning','The bank is the winner!!');
-            } elseif ($bankTotalValue > 21) {
-                $this->addFlash(
-                    'success','The player is the winner!!');
-            } elseif ($playerTotalValue > $bankTotalValue) {
-                $this->addFlash(
-                    'success','The player is the winner!!');
-            } else {
-                $this->addFlash(
-                    'warning','The bank is the winner!!');
-            }
+                'warning',
+                'The bank is the winner!!'
+            );
+        } elseif ($bankTotalValue > 21) {
+            $this->addFlash(
+                'success',
+                'The player is the winner!!'
+            );
+        } elseif ($playerTotalValue > $bankTotalValue) {
+            $this->addFlash(
+                'success',
+                'The player is the winner!!'
+            );
+        } else {
+            $this->addFlash(
+                'warning',
+                'The bank is the winner!!'
+            );
+        }
 
-            return $this->render('game/endgame.html.twig');
+        return $this->render('game/endgame.html.twig');
     }
 }

@@ -22,7 +22,7 @@ class Card
     {
         return $this->number;
     }
-    
+
     public function getNumberValue(): int
     {
         return match ($this->number) {
