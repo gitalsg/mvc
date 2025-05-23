@@ -13,7 +13,7 @@ class CardHandPlayerTest extends TestCase
      * Verify that the players hand can take a card
      * and add it to the hand.
      */
-    public function testCardAddCardplayer()
+    public function testCardAddCardplayer(): void
     {
         $hand = new CardHandPlayer();
         $card = new Card("Diamonds", "6");
@@ -25,7 +25,7 @@ class CardHandPlayerTest extends TestCase
      * Test to see get the values of players hand
      * after a card has been added to the hand.
      */
-    public function testPlayerGetValues()
+    public function testPlayerGetValues(): void
     {
         $hand = new CardHandPlayer();
         $hand->addCard(new Card("Hearts", "8"));
@@ -38,7 +38,7 @@ class CardHandPlayerTest extends TestCase
      * Verify that the total value of players hand
      * after taking cards is correct. Test over 21 with A as value 1.
      */
-    public function testPlayerGetTotalValueEss()
+    public function testPlayerGetTotalValueEss(): void
     {
         $hand = new CardHandPlayer();
         $hand->addCard(new Card("Diamonds", "6"));
@@ -52,14 +52,13 @@ class CardHandPlayerTest extends TestCase
      * Verify that the object has the expected
      * properties of graphic.
      */
-    public function testCardPlayerGetString()
+    public function testCardPlayerGetString(): void
     {
         $hand = new CardHandPlayer();
         $hand->addCard(new CardGraphic("Diamonds", "6"));
 
         $res = $hand->getString();
-        $this->assertIsArray($res);
-        
+
         $this->assertEquals(["6♦"], $res);
     }
 
@@ -67,7 +66,7 @@ class CardHandPlayerTest extends TestCase
      * Verify that the object returns the expected
      * cards of players hand.
      */
-    public function testPlayerGetCards()
+    public function testPlayerGetCards(): void
     {
         $hand = new CardHandPlayer();
         $card = new Card("Diamonds", "6");
@@ -75,7 +74,7 @@ class CardHandPlayerTest extends TestCase
 
         $cards = $hand->getCards();
         $this->assertCount(1, $cards);
-        
+
         $this->assertSame($card, $cards[0]);
     }
 }

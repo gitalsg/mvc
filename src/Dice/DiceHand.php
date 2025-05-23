@@ -41,7 +41,7 @@ class DiceHand
     }
 
     /**
-     * @return int[]
+     * @return int
      */
     public function sum(): int
     {

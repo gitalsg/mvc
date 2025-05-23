@@ -1,7 +1,9 @@
-{# templates/api.html.twig #}
+{% extends "base.html.twig" %}
 
-<!DOCTYPE html>
-<html>
+{% block title %}About{% endblock %}
+
+{% block body %}
+
     <head>
         <title>All APIs</title>
     </head>
@@ -57,4 +59,9 @@
         <li><a href="{{ path('api_card_game') }}">Game 21</a></li>
 
     </body>
-</html>
+
+<footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+    </footer>
+
+{% endblock %}

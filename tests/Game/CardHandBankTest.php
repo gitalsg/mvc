@@ -13,7 +13,7 @@ class CardHandBankTest extends TestCase
      * Verify that the bankhand can take a card
      * and add it to the hand.
      */
-    public function testCardAddCardBank()
+    public function testCardAddCardBank(): void
     {
         $hand = new CardHandBank();
         $card = new Card("Diamonds", "6");
@@ -25,7 +25,7 @@ class CardHandBankTest extends TestCase
      * Test to see get the values of bankhand
      * after a card has been added to the hand.
      */
-    public function testBankGetValues()
+    public function testBankGetValues(): void
     {
         $hand = new CardHandBank();
         $hand->addCard(new Card("Hearts", "8"));
@@ -38,7 +38,7 @@ class CardHandBankTest extends TestCase
      * Verify that the total value of bankhand
      * after taking cards is correct. Test over 21 with A as value 1.
      */
-    public function testBankGetTotalValueEss()
+    public function testBankGetTotalValueEss(): void
     {
         $hand = new CardHandBank();
         $hand->addCard(new Card("Diamonds", "6"));
@@ -52,7 +52,7 @@ class CardHandBankTest extends TestCase
      * Verify that the total value of bankhand
      * after taking cards is correct. Test under 21.
      */
-    public function testBankGetTotalValue()
+    public function testBankGetTotalValue(): void
     {
         $hand = new CardHandBank();
         $hand->addCard(new Card("Diamonds", "6"));
@@ -65,14 +65,13 @@ class CardHandBankTest extends TestCase
      * Verify that the object has the expected
      * properties of graphic.
      */
-    public function testCardGetString()
+    public function testCardGetString(): void
     {
         $hand = new CardHandBank();
         $hand->addCard(new CardGraphic("Diamonds", "6"));
 
         $res = $hand->getString();
-        $this->assertIsArray($res);
-        
+
         $this->assertEquals(["6♦"], $res);
     }
 
@@ -80,7 +79,7 @@ class CardHandBankTest extends TestCase
      * Verify that the object returns the expected
      * cards of bankhand.
      */
-    public function testBankGetCards()
+    public function testBankGetCards(): void
     {
         $hand = new CardHandBank();
         $card = new Card("Diamonds", "6");
@@ -88,7 +87,7 @@ class CardHandBankTest extends TestCase
 
         $cards = $hand->getCards();
         $this->assertCount(1, $cards);
-        
+
         $this->assertSame($card, $cards[0]);
     }
 }

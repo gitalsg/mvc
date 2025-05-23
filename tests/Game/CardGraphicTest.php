@@ -13,7 +13,7 @@ class CardGraphicTest extends TestCase
      * Construct object and verify that the object has the expected
      * properties.
      */
-    public function testCardGraphic()
+    public function testCardGraphic(): void
     {
         $card = new CardGraphic("Diamonds", "6");
         $this->assertEquals("Diamonds", $card->getColor());
@@ -24,7 +24,7 @@ class CardGraphicTest extends TestCase
      * Verify that the object has the expected
      * properties of graphic.
      */
-    public function testCardGraphicAsString()
+    public function testCardGraphicAsString(): void
     {
         $card = new CardGraphic("Diamonds", "6");
         $this->assertEquals("6♦", $card->getAsString());

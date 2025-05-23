@@ -13,7 +13,7 @@ class CardTest extends TestCase
      * Construct object and verify that the object has the expected
      * properties.
      */
-    public function testCreateCard()
+    public function testCreateCard(): void
     {
         $card = new Card("Diamonds", "6");
         $this->assertInstanceOf("\App\Game\Card", $card);
@@ -26,7 +26,7 @@ class CardTest extends TestCase
      * Verify that the object has the expected
      * properties for the number value.
      */
-    public function testCardNumber()
+    public function testCardNumber(): void
     {
         $card = new Card("Diamonds", "6");
         $this->assertEquals("6", $card->getNumber());
@@ -37,7 +37,7 @@ class CardTest extends TestCase
      * Verify that the object has the expected
      * properties for the color value.
      */
-    public function testCardColor()
+    public function testCardColor(): void
     {
         $card = new Card("Diamonds", "6");
         $this->assertEquals("Diamonds", $card->getColor());
@@ -48,7 +48,7 @@ class CardTest extends TestCase
      * Verify that the object has the expected
      * properties for the number value.
      */
-    public function testCardNumberValue()
+    public function testCardNumberValue(): void
     {
         $card = new Card("Diamonds", "J");
         $this->assertEquals(11, $card->getNumberValue());
@@ -59,7 +59,7 @@ class CardTest extends TestCase
      * Verify that the object has the expected
      * properties for the card value.
      */
-    public function testCardShowCard()
+    public function testCardShowCard(): void
     {
         $card = new Card("Diamonds", "J");
         $this->assertEquals("J", $card->getShowCard());
@@ -70,7 +70,7 @@ class CardTest extends TestCase
      * Verify that the string returned has the expected
      * properties for the card value.
      */
-    public function testCardGetAsString()
+    public function testCardGetAsString(): void
     {
         $card = new Card("Diamonds", "8");
         $this->assertEquals("8 of Diamonds", $card->getAsString());
