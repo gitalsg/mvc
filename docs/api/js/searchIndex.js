@@ -443,37 +443,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "Card\u0020will\u0020create\u0020a\u0020specific\u0020card.\u0020It\u0020creates\u0020an\u0020individual\u0020card\u0020with\u0020the\u0020cards\u0020value.",
             "url": "classes/App-Game-Card.html"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Construct\u0020object\u0020with\u0020a\u0020color\u0020and\u0020number\u003B\u0020this\u0020gives\u0020the\u0020cards\u0020a\u0020value.",
             "url": "classes/App-Game-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003AgetColor\u0028\u0029",
             "name": "getColor",
-            "summary": "",
+            "summary": "To\u0020extract\u0020a\u0020cards\u0020properties,\u0020to\u0020know\u0020which\u0020color\u0020the\u0020card\u0020has.",
             "url": "classes/App-Game-Card.html#method_getColor"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003AgetNumber\u0028\u0029",
             "name": "getNumber",
-            "summary": "",
+            "summary": "Provides\u0020an\u0020extraction\u0020of\u0020a\u0020cards\u0020properties,\u0020to\u0020know\u0020which\u0020number\u0020the\u0020card\u0020has.",
             "url": "classes/App-Game-Card.html#method_getNumber"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003AgetNumberValue\u0028\u0029",
             "name": "getNumberValue",
-            "summary": "",
+            "summary": "To\u0020get\u0020the\u0020specific\u0020value\u0020for\u0020the\u0020card,\u0020to\u0020know\u0020the\u0020value\u0020in\u0020numbers.\u0020This\u0020way,\u0020it\u0020is\u0020possible\u0020to\u0020sum\u0020the\u0020cards\u0020value.",
             "url": "classes/App-Game-Card.html#method_getNumberValue"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003AgetShowCard\u0028\u0029",
             "name": "getShowCard",
-            "summary": "",
+            "summary": "To\u0020show\u0020the\u0020card\u0020as\u0020it\u0020is\u003B\u0020when\u0020an\u0020A\u0020is\u0020drawn,\u0020you\u0020will\u0020see\u0020an\u0020A\u0020not\u002014\u0020or\u00201,\u0020as\u0020its\u0020value.",
             "url": "classes/App-Game-Card.html#method_getShowCard"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "To\u0020get\u0020the\u0020card\u0020as\u0020a\u0020string,\u0020to\u0020print\u0020out\u0020the\u0020card.",
             "url": "classes/App-Game-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Game\\Card\u003A\u003A\u0024color",
@@ -488,17 +488,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "",
+            "summary": "Card\u0020will\u0020create\u0020a\u0020specific\u0020card.\u0020It\u0020creates\u0020an\u0020individual\u0020card\u0020with\u0020the\u0020cards\u0020value.",
             "url": "classes/App-Game-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Game\\CardGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Construct\u0020object\u0020with\u0020a\u0020color\u0020and\u0020number\u003B\u0020this\u0020gives\u0020the\u0020cards\u0020a\u0020value.",
             "url": "classes/App-Game-CardGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "To\u0020get\u0020the\u0020card\u0020as\u0020a\u0020string,\u0020to\u0020print\u0020out\u0020the\u0020card.",
             "url": "classes/App-Game-CardGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Game\\CardGraphic\u003A\u003A\u0024representation",
