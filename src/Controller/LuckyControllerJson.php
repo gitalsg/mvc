@@ -6,6 +6,7 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -188,5 +189,15 @@ class LuckyControllerJson extends AbstractController
         );
 
         return $response;
+    }
+
+    #[Route('/api/library/books', name: 'api_library_show_all')]
+    public function showAllBooks(
+        BookRepository $bookRepository
+    ): Response {
+        $books = $bookRepository
+            ->findAll();
+
+        return $this->json($books);
     }
 }
