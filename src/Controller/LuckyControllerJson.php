@@ -211,7 +211,7 @@ class LuckyControllerJson extends AbstractController
         if (!$book) {
             throw $this->createNotFoundException("The book $book do not exist.");
         }
-        
+
         $data = [
             'id' => $book->getId(),
             'title' => $book->getTitel(),
