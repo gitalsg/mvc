@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h1>Uppdatera bok: {{ book.titel }}</h1>
+<h1>Update the book: {{ book.titel }}</h1>
 
 <form action="{{ path('updated_book', { id: book.id }) }}" method="post">
 
