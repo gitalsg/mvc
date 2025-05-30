@@ -50,7 +50,7 @@ final class ProductController extends AbstractController
 
         // $response = $this->json($products);
         // $response->setEncodingOptions(
-            // $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        // $response->getEncodingOptions() | JSON_PRETTY_PRINT
         // );
         // return $response;
     }

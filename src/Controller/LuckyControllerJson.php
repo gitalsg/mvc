@@ -208,6 +208,10 @@ class LuckyControllerJson extends AbstractController
     ): Response {
         $book = $bookRepository->findOneBy(['isbn' => $isbn]);
 
+        if (!$book) {
+            throw $this->createNotFoundException("The book $book do not exist.");
+        }
+        
         $data = [
             'id' => $book->getId(),
             'title' => $book->getTitel(),

@@ -22,7 +22,8 @@ final class BookController extends AbstractController
     }
 
     #[Route('/library/create', name: 'create_book', methods: ['GET'])]
-    public function createBook(): Response {
+    public function createBook(): Response
+    {
 
         $book = new Book();
         $form = $this->createForm(BookTypeForm::class, $book);
@@ -44,13 +45,13 @@ final class BookController extends AbstractController
         $form = $this->createForm(BookTypeForm::class, $book);
         $form->handleRequest($request);
 
-    // tell Doctrine you want to (eventually) save the Book
-    $entityManager->persist($book);
+        // tell Doctrine you want to (eventually) save the Book
+        $entityManager->persist($book);
 
-    // actually executes the queries (i.e. the INSERT query)
-    $entityManager->flush();
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
 
-    return $this->redirectToRoute('app_library');
+        return $this->redirectToRoute('app_library');
     }
 
     #[Route('/library/show', name: 'library_show_all')]
@@ -60,9 +61,9 @@ final class BookController extends AbstractController
         $books = $bookRepository
             ->findAll();
 
-    return $this->render('book/viewbooks.html.twig', [
-        'books' => $books,
-    ]);
+        return $this->render('book/viewbooks.html.twig', [
+            'books' => $books,
+        ]);
     }
     #[Route('/library/show/{id}', name: 'book_by_id')]
     public function showBookById(
@@ -100,9 +101,17 @@ final class BookController extends AbstractController
         $entityManager = $doctrine->getManager();
         $book = $entityManager->getRepository(Book::class)->find($id);
 
-        $book->setTitel($request->request->get('titel'));
-        $book->setIsbn($request->request->get('isbn'));
-        $book->setAuthor($request->request->get('author'));
+        if (!$book) {
+            throw $this->createNotFoundException("The book $id do not exist.");
+        }
+
+        $titel = (string) ($request->request->get('titel'));
+        $isbn = (int) ($request->request->get('isbn'));
+        $author = (string) ($request->request->get('author'));
+
+        $book->setTitel($titel);
+        $book->setIsbn($isbn);
+        $book->setAuthor($author);
 
         $entityManager->flush();
 
@@ -118,6 +127,10 @@ final class BookController extends AbstractController
 
         $entityManager = $doctrine->getManager();
         $book = $entityManager->getRepository(Book::class)->find($id);
+
+        if (!$book) {
+            throw $this->createNotFoundException("Book not found.");
+        }
 
         $entityManager->remove($book);
         $entityManager->flush();
