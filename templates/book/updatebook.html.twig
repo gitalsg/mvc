@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Book{% endblock %}
+
+{% block body %}
+
+<h1>Uppdatera bok: {{ book.titel }}</h1>
+
+<form action="{{ path('updated_book', { id: book.id }) }}" method="post">
+
+    <label for="titel">Title:</label>
+    <input type="text" id="titel" name="titel" value="{{ book.titel }}">
+
+    <label for="isbn">ISBN:</label>
+    <input type="text" id="isbn" name="isbn" value="{{ book.isbn }}">
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" value="{{ book.author }}">
+
+    <button type="submit">Spara ändringar</button>
+
+</form>
+
+{% endblock %}

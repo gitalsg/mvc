@@ -1,20 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BookController!{% endblock %}
+{% block title %}Library{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello BOOK {{ controller_name }}! ✅</h1>
+<h1>The library</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/alexandracarlsson/dbwebb-kurser/mvc/me/report/src/Controller/BookController.php</code></li>
-        <li>Your template at <code>/Users/alexandracarlsson/dbwebb-kurser/mvc/me/report/templates/book/index.html.twig</code></li>
-    </ul>
-</div>
+<p>At the moment, you can find three books in the library. It is possible to see the books details by clicking on the link here below.</p>
+<p>You can also add a new book and update or delete a book from their own site.</p>
+
+<p>Create a new book here: <a href="{{ path('create_book') }}">Create book</a></h2>
+
+<p>You can see all the books here: <a href="{{ path('library_show_all') }}">See books</a></h2>
+
 {% endblock %}

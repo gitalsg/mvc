@@ -57,6 +57,14 @@
     <p> - /api/game - shows you the total value for each player in the Card Game 21.</p>
 
         <li><a href="{{ path('api_card_game') }}">Game 21</a></li>
+    
+    <p> - /api/library/books - shows all the books in the library.</p>
+
+        <li><a href="{{ path('library_show_all') }}">Library</a></li>
+
+    <p> - /api/library/book/<isbn> - see a specific book in the library using the isbn number.</p>
+
+        <li><a href="{{ path('api_book_isbn', { isbn: '123456' }) }}">Example book</a></li>
 
     </body>
 

@@ -200,4 +200,27 @@ class LuckyControllerJson extends AbstractController
 
         return $this->json($books);
     }
+
+    #[Route('/api/library/books/{isbn}', name: 'api_book_isbn', methods: ['GET'])]
+    public function showSpecBook(
+        BookRepository $bookRepository,
+        string $isbn
+    ): Response {
+        $book = $bookRepository->findOneBy(['isbn' => $isbn]);
+
+        $data = [
+            'id' => $book->getId(),
+            'title' => $book->getTitel(),
+            'isbn' => $book->getIsbn(),
+            'author' => $book->getAuthor(),
+            'picture' => $book->getPicture(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
 }

@@ -60,6 +60,68 @@ final class BookController extends AbstractController
         $books = $bookRepository
             ->findAll();
 
-    return $this->render('book/viewbooks.html.twig');
+    return $this->render('book/viewbooks.html.twig', [
+        'books' => $books,
+    ]);
+    }
+    #[Route('/library/show/{id}', name: 'book_by_id')]
+    public function showBookById(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository
+            ->find($id);
+
+        return $this->render('book/viewbookid.html.twig', [
+            'book' => $book,
+        ]);
+    }
+
+    #[Route('/library/update/{id}', name: 'update_book', methods: ['GET'])]
+    public function formUpdateBook(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+
+        $book = $bookRepository->find($id);
+
+        return $this->render('book/updatebook.html.twig', [
+            'book' => $book,
+        ]);
+    }
+
+    #[Route('/library/updated/{id}', name: 'updated_book', methods: ['POST'])]
+    public function newUpdatedBook(
+        Request $request,
+        ManagerRegistry $doctrine,
+        int $id
+    ): Response {
+
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->find($id);
+
+        $book->setTitel($request->request->get('titel'));
+        $book->setIsbn($request->request->get('isbn'));
+        $book->setAuthor($request->request->get('author'));
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('book_by_id', ['id' => $book->getId()]);
+    }
+
+    #[Route('/library/delete/{id}', name: 'delete_book', methods: ['POST'])]
+    public function deleteBook(
+        Request $request,
+        ManagerRegistry $doctrine,
+        int $id
+    ): Response {
+
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->find($id);
+
+        $entityManager->remove($book);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_show_all');
     }
 }

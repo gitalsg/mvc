@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}All books{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,30 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>All books ✅</h1>
+    <h1>All books</h1>
 
-    <ul>
-        {% for book in books %}
-            <li>{{ book.getTitel|e }} ({{ book.getIsbn|e }}) {{ book.getAuthor|e }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.getId|e }}</td>
+                    <td>{{ book.getTitel|e }}</td>
+                    <td>{{ book.getIsbn|e }}</td>
+                    <td>{{ book.getAuthor|e }}</td>
+                    <td>
+                        <a href="{{ path('book_by_id', { id: book.getId }) }}">See book</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

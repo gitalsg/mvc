@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book details{% endblock %}
+
+{% block body %}
+
+<h1>Book details</h1>
+
+<h2>{{ book.getTitel }}</h2>
+    <p><strong>ISBN:</strong> {{ book.getIsbn }}</p>
+    <p><strong>Author:</strong> {{ book.getAuthor }}</p>
+
+    {% if book.getPicture %}
+        <img src="{{ asset(book.getPicture) }}" alt="Book cover" style="max-height: 200px;">
+    {% else %}
+        <p><em>Book cover not available</em></p>
+    {% endif %}
+
+    <br><a href="{{ path('update_book', { id: book.id }) }}">
+    <button type="button">Update book</button></a>
+
+    <form action="{{ path('delete_book', { id: book.id }) }}" method="post" style="display: inline;">
+        <button type="submit">Delete book</button>
+    </form>
+
+    <br><a href="{{ path('library_show_all') }}">Back to all books</a>
+
+{% endblock %}
