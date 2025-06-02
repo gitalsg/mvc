@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics analys{% endblock %}
+
+{% block body %}
+    <h1>Metrics analys</h1>
+
+    <h2>Introduktion</h2>
+
+    <p>Bättre kod som förbättrar kodkvalite kan uppnås genom att följa de sex C:na för clean code. Dessa C är Codestyle, Coverage, Complexity, Cohesion, Coupling samt CRAP.</p>
+        
+    <ul>
+        <li>Codestyle avser hur väl strukturerad ens kod är sam hur den är uppbyggd. Att vara konsekvent i ens kod och skriva lättförståelig kod är av stor vikt för att underlätta arbetet för andra om man arbetar i grupp, göra det smidigt vid felsökning, etc.</li>
+        <li>Coverage visar i vilken grad koden är testad; detta värde visar hur stor del av ens kod är testad. Har man ett högt värde kan man se att koden är väl testad och säker. Är värdet lågt kan det innebära ett lägre kvalite och potentiell risk för fel.</li>
+        <li>Complexity innebär hur komplex koden är i form av loopar, if-satser, etc. Ett högre komplexitet visar på mycket komplex kod som kan vara svår att underhålla. Ett låg komplexitet visar på att koden är enkelare att underhålla och utveckla.</li>
+        <li>Cohesion visar hur klasserna och metoderna håller ihop, hur avgränsade metoderna är och hur de håller ihop i klassen. Har man ett lågt värde så innebär det hög grad av cohesion, vilket betyder att klasserna faktisk har avgränsade ansvarsområden. Är det tvärtom så innebär det låg cohesion vilket visar på att klasserna har flera ansvarsområden.</li>
+        <li>Coupling  är ett värde som visar exempelvisar hur vissa klasser är beroende av varandra för att fungera. Ändrar man i en klass så riskerar man att det påverkar en annan, som i sin tur kan skapa oväntade problem. Ett högt värde visar på att klasser är mycket beroende av varandra och ett lågt värde tvärtom.</li>
+        <li>CRAP står för Change Risk Analyzer and Predictor som är ett värde som visar på kodkomplexitet i förhållande till kodens testtäckning. Ju högre värde desto mer komplext kod som inte är dålig testad. Har man en hög testgrad på sin kod och låg komplexitet kan man minska detta värde.</li>
+    </ul>
+
+    <h2>Phpmetrics</h2>
+
+    <p>När jag testade min kod me/report i Phpmetricts</p>
+
+    <footer class="site-footer">
+        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+    </footer>
+
+{% endblock %}
