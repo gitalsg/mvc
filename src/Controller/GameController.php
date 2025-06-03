@@ -91,33 +91,33 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_bank');
     }
 
-    private function moreCardsForPlayer($deck, $playerHand,SessionInterface $session): Response
+    private function moreCardsForPlayer($deck, $playerHand, SessionInterface $session): Response
     {
         $card = $deck->takeCard();
         $playerHand->addCard($card);
 
         $totalValue = $playerHand->getTotalValue();
 
-            if ($totalValue == 21) {
-                $this->addFlash(
-                    'warning',
-                    'You got 21; it is the banks turn now!'
-                );
-                return $this->redirectToRoute('game_bank');
-            } if ($totalValue > 21) {
-                $this->addFlash(
-                    'notice',
-                    'You got over 21; you lost!'
-                );
-                return $this->redirectToRoute('end_game');
-            }
+        if ($totalValue == 21) {
+            $this->addFlash(
+                'warning',
+                'You got 21; it is the banks turn now!'
+            );
+            return $this->redirectToRoute('game_bank');
+        } if ($totalValue > 21) {
+            $this->addFlash(
+                'notice',
+                'You got over 21; you lost!'
+            );
+            return $this->redirectToRoute('end_game');
+        }
 
-            $session->set('deck', $deck);
-            $session->set('player_hand', $playerHand);
+        $session->set('deck', $deck);
+        $session->set('player_hand', $playerHand);
 
-            return $this->redirectToRoute('game_player');
+        return $this->redirectToRoute('game_player');
     }
-    
+
     #[Route("/game/bank/play", name: "game_bank")]
     public function bankGame(SessionInterface $session): Response
     {

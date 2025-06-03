@@ -75,7 +75,29 @@
     <h2>Förbättringar</h2>
     <p>För att förbättra min kod så tänker jag att man hade kunnat försöka fixa några av de Violations som Phpmetrics visade. För att minska risken för buggar hade man kunnat lägga till enhetstester för de Controllers som Phpmetrics varnade för. En annan förbättring som jag vill implementera är kodtäckningsgraden. Lägga till fler tester som testar mina olika klasser och på så vis öka täckningsgraden och samtidigt minska CRAP-värdet på dessa. Jag vill även minska komplexiteten i någon av mina klasser. Jag har flera som har en någorlunga hög grad av komplexitet så dessa hade man kunnat delar upp i flera för att minska komplexiteten.</p>
     <p>Dessa ändringar kommer förhoppningsvis leda till högra kvalite på min kod, lägre CRAP-värde och mindre komplexitet. Det kommer också öka graden av kodtäckning eftersom att fler klasser kommer att testas.</p>
-    <p>Efter att ha implementerat förbättringar så har min Coverage ökat i Phpmetricts till 50%</p> 
+    <p>Efter att ha implementerat förbättringar så har min Unit testning, classes never called by test i Phpmetricts minskat till 56%. Man kan även se i Scrutinazer att min coverage numera är 22%. Fortfarande väldigt lågt men jag har flera klasser som numera testas.</p> 
+
+    <a href="{{ asset('img/coverageimpro.png') }}">
+        <img src="{{ asset('img/coverageimpro.png') }}" alt="coverageimpro">
+    </a>
+
+    <p>Jag har även gjort förändringar i en av mina Controllers för att minska på komplexiteten. Där har delat upp min Controller i mindre delar som är mindre komplexa. Man kan se i bilden nedan att både Complexity samt CRAP-värdet har minskat, vilket visar att förändringen faktiskt gjorde skillnad gemfört med tidigare.</p>
+    
+    <div class="specpic">
+    <a href="{{ asset('img/compleximpro.png') }}">
+        <img src="{{ asset('img/compleximpro.png') }}" alt="compleximpro">
+    </a>
+    </div>
+
+    <p>Slutligen försökte jag även förbättra en av de Violations jag hade, men lyckades inte få bort varningen. Jag trodde att det som saknades var tester för själva Controllern för att undvika buggar men även om jag hade skapat tester för controllen så var varningen fortfarande kvar. Enda skillnade blev att den visade i Phpmetrics att det fans 1 testsuites för klassen.</p>
+
+    <a href="{{ asset('img/testsuite.png') }}">
+        <img src="{{ asset('img/testsuite.png') }}" alt="testsuite">
+    </a>
+
+    <h2>Diskussion</h2>
+    <p>Att arbeta med clean code på detta sättet, genom att testa ens kod när mycket av arbetet är klart tycker jag har varit lite utmanande. Framförallt att skapa enhetstester för exempelvis Controllers, som kanske redan har blivit väldigt komplexa eller som skapades för ett tag sedan. Jag tror att det kan vara smidigare att arbeta med kodkvalitet under arbetets gång; skapa bra kodtäckning under tiden man skapar sina klasser och metoder. Det krånglade lite för mig när jag skapade tester för en av mina controllers. Efter ett lång tag av försök för att rätta till problemet som uppstod så fick jag ge upp och ta bort testerna, eftersom att det verkade som att dessa krockade med något annat och det testerna i Scrutinazer inte gick igenom.</p>
+    <p>Däremot kan jag tycka att det har varit väldigt givande att se hur ens kodkvalite är utan att ha tänkt så mycket på att aktivt arbeta med det. Men jag ser hellre att arbeta med det aktivt under tiden än i slutet; jag tror att det är mer fördelaktigt att göra det för att undvika framtida problem. Jag tror att det är en nackdel att göra det i slutet eftersom att en hel del klasser kan vara beroende av varandra och det kan bli svårt att göra större förändringar utan att förstöra något.</p>
     <footer class="site-footer">
         <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
     </footer>
