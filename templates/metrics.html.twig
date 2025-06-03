@@ -20,8 +20,47 @@
 
     <h2>Phpmetrics</h2>
 
-    <p>När jag testade min kod me/report i Phpmetricts</p>
+    <p>När jag testade min kod me/report i Phpmetricts visade i Codestyle att det fanns 10 Violations i min kod, varav 8 var Warnings och 2 Errors. Där kunde jag se att varningarna berodde på att 3 av mina App\Controller same 5 av mina App\ var sannolika att innehålla buggar. För att unvika detta hade enhetstester för dessa Controller behövts implementeras. För namespacen innebär det att det att dessa är instabila och har flera beroende.</p>
+    <p>Det var även två av dessa Controller som hader Error-varning för att klasserna har flera ansvarsområden, vilket gör de svåra att testa och underhålla utan problem. I dessa fall hade man behövt dela upp klasserna i mindre klasser med mer specifika ansvarsområden.</p>
+    
+    <a href="{{ asset('img/violations.png') }}">
+        <img src="{{ asset('img/violations.png') }}" alt="violations">
+    </a>
 
+    <a href="{{ asset('img/coupling.png') }}">
+        <img src="{{ asset('img/coupling.png') }}" alt="coupling">
+    </a>
+
+    <p>Med Phpmetricts kan man även se hur beroende klasserna är gentemot varandra, Coupling. Man kan se att klaaserna längst upp har 3 andra klasser som är beroende av denna. Dessa klasser är ändå väldigt stabila eftersom att den inte är beroende själv av andra klasser. Däremot den tredje klassen kan man se att den är beroende av 2 andra klasser och själv är beroende av 2 klasser. Man kan då se att denna är lite instabil eftersom att den kan vara känslig för vissa ändringar.</p>
+
+    <p>I kodkomplexitet, Complexity, kan man se att värdet för min kod är 6.92. Ju högre värde här desto mer komplex är koden per klass. Ihop med Cyclomatic complexity kan man se hur svår koden är att underhålla och testa, eftersom att den är komplex. Man kan se att den första klassen har en väldigt hög komplexitet på 121 och inga tester, vilket kan göra den sårbar.</p>
+
+    <a href="{{ asset('img/complexity.png') }}">
+        <img src="{{ asset('img/complexity.png') }}" alt="complexity">
+    </a>
+
+    <h2>Scrutinizer</h2>
+
+    <div class="scrutinizer">
+
+        <a href="https://scrutinizer-ci.com/g/gitalsg/mvc/?branch=master">
+            <img src="https://scrutinizer-ci.com/g/gitalsg/mvc/badges/quality-score.png?b=master">
+        </a>
+
+        <a href="https://scrutinizer-ci.com/g/gitalsg/mvc/?branch=master">
+            <img src="https://scrutinizer-ci.com/g/gitalsg/mvc/badges/coverage.png?b=master">
+        </a>
+
+        <a href="https://scrutinizer-ci.com/g/gitalsg/mvc/?branch=master">
+            <img src="https://scrutinizer-ci.com/g/gitalsg/mvc/badges/build.png?b=master">
+        </a>
+
+        <a href="https://scrutinizer-ci.com/g/gitalsg/mvc/?branch=master">
+            <img src="https://scrutinizer-ci.com/g/gitalsg/mvc/badges/code-intelligence.svg?b=master">
+        </a>
+    </div>
+
+    
     <footer class="site-footer">
         <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
     </footer>
