@@ -60,7 +60,22 @@
         </a>
     </div>
 
-    
+    <p>I Srutinizer kan vi få en analys av det repo vi har på GitHub. Scrutinizer visade bland annat att min kod hade en coverage på 16%, vilket är ett väldigt lågt värde och visar hur lite denna testas.</p>
+    <p>När man kollar mer ingående på Coverage så ser vi att endast två objekt enhetstestas, varav en har 100% coverage, vilket är bra. För att öka den totala coverage bör fler objekt och klasser testas och på så vis försäkra högre kodtäckning. Detta påverkar också i sin tur CRAP-värdet och gör koden mer sårbar.</p>
+    <p>Sedan kan vi se lite olika värden på specifika klasser. Här hade alla mina klasser en Rating på A, men man kan se att de har en viss komplexitet ändå samt en hög grad i CRAP-värdet. För att minska på komplexitet kan man göra dessa klasser mindre och dela upp de i fler mer inriktade klasser. Detta i kombination med högre grad av kodtäckning skulle även i sin tur minska CRAP-värdet.</p>
+
+    <a href="{{ asset('img/coverage.png') }}">
+        <img src="{{ asset('img/coverage.png') }}" alt="coverage">
+    </a>
+
+    <a href="{{ asset('img/cc.png') }}">
+        <img src="{{ asset('img/cc.png') }}" alt="cc">
+    </a>
+
+    <h2>Förbättringar</h2>
+    <p>För att förbättra min kod så tänker jag att man hade kunnat försöka fixa några av de Violations som Phpmetrics visade. För att minska risken för buggar hade man kunnat lägga till enhetstester för de Controllers som Phpmetrics varnade för. En annan förbättring som jag vill implementera är kodtäckningsgraden. Lägga till fler tester som testar mina olika klasser och på så vis öka täckningsgraden och samtidigt minska CRAP-värdet på dessa. Jag vill även minska komplexiteten i någon av mina klasser. Jag har flera som har en någorlunga hög grad av komplexitet så dessa hade man kunnat delar upp i flera för att minska komplexiteten.</p>
+    <p>Dessa ändringar kommer förhoppningsvis leda till högra kvalite på min kod, lägre CRAP-värde och mindre komplexitet. Det kommer också öka graden av kodtäckning eftersom att fler klasser kommer att testas.</p>
+
     <footer class="site-footer">
         <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
     </footer>
