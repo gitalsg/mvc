@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
@@ -16,9 +15,11 @@ class DiceGameControllerTest extends WebTestCase
      */
     public function testStartPigGame(): void
     {
-        $client = new DiceGameController(new RequestStack());
-        $this->assertInstanceOf("\App\Controller\DiceGameController", $client);
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/game/pig');
 
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h1', 'Pig game');
     }
 
     /** Test POST route /game/pig/init */
