@@ -80,10 +80,23 @@ class GameController extends AbstractController
         $moreCards = $request->request->get('moreCards');
 
         if ($moreCards === 'more') {
-            $card = $deck->takeCard();
-            $playerHand->addCard($card);
+            return $this->moreCardsForPlayer($deck, $playerHand, $session);
+        } if ($moreCards === 'no') {
+            $this->addFlash(
+                'notice',
+                'You chosed to stand; it is the banks turn now!'
+            );
+        }
 
-            $totalValue = $playerHand->getTotalValue();
+        return $this->redirectToRoute('game_bank');
+    }
+
+    private function moreCardsForPlayer($deck, $playerHand,SessionInterface $session): Response
+    {
+        $card = $deck->takeCard();
+        $playerHand->addCard($card);
+
+        $totalValue = $playerHand->getTotalValue();
 
             if ($totalValue == 21) {
                 $this->addFlash(
@@ -91,7 +104,7 @@ class GameController extends AbstractController
                     'You got 21; it is the banks turn now!'
                 );
                 return $this->redirectToRoute('game_bank');
-            } elseif ($totalValue > 21) {
+            } if ($totalValue > 21) {
                 $this->addFlash(
                     'notice',
                     'You got over 21; you lost!'
@@ -103,19 +116,8 @@ class GameController extends AbstractController
             $session->set('player_hand', $playerHand);
 
             return $this->redirectToRoute('game_player');
-        }
-
-        if ($moreCards === 'no') {
-            $this->addFlash(
-                'notice',
-                'You chosed to stand; it is the banks turn now!'
-            );
-            return $this->redirectToRoute('game_bank');
-        }
-
-        return $this->redirectToRoute('game_bank');
     }
-
+    
     #[Route("/game/bank/play", name: "game_bank")]
     public function bankGame(SessionInterface $session): Response
     {

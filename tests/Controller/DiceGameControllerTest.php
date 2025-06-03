@@ -20,5 +20,25 @@ class DiceGameControllerTest extends WebTestCase
         $this->assertInstanceOf("\App\Controller\DiceGameController", $client);
 
     }
+
+    /** Test POST route /game/pig/init */
+    public function testPigGameInit(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/game/pig/init');
+        
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorExists('form');
+    }
+
+    public function testPigInitPostRedirects(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/game/pig/init', [
+            'num_dices' => 2
+        ]);
+
+        $this->assertResponseRedirects('/game/pig/play');
+    }
 }
 
