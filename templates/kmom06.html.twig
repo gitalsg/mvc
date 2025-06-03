@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kmom06{% endblock %}
+
+{% block body %}
+    <h1>Kmom06</h1>
+    <h2>Redovisningstext Kmom06:</h2>
+    <p>PHPMetrics tyckte jag var lite svår att förstå i början var alla värden var och hur man navigerade på sidan. Det var värdefullt att det fanns tillgång till videos där Mikael gick igenom både PHPMetricts och Scrutinazer. Det jag tyckte var uppskattat, bland annat, var att man kunde smidigt se varningar om buggar; att den visar sårbara delar i en projekt. Något annat är enkelheten att se hur kopplade en klasser var till varandra. PHPMetrics visar väldigt tydligt på Coupling och gör det smidigt att se hur många klasser som är kopplade till en och hur många som kopplas till andra.</p>
+    <p>Integrationen med Scrutinizer tog en stund, vilket fick mig att tro att något inte gick som det skulle men jag gav det tid och när det väl var klart så hade allt gått bra. Första intrycket var att det var enkelt att navigera och utforska olika delar av ens kod. Även de fyra badges är ger ett bra överblick över ens kod, framförallt hur stor andel av koden som testas, Coverage. Att se ens kodtäckning så smidigt var uppskattat. Vid första bygget fick jag en kodtäckning på 15,6%; efter att ha lagt till enhetstester på några klasser till fick jag upp det till 22%. En stor andel av testade klasser kommer från mina Controller, vilket får mig att tro att det är därför min Coverage är så låg.</p>
+    <p>Min syn på kodkvalitet är att det kan vara lite svårt att komma upp i de standarden som krävs för att uppnå riktigt bra kodkvalitet. Att ha mycket bra värden i alla sex C känns för tillfället lite svåråtkomligt men jag kan tycka att både PHPMetrics samt Scrutinazer är väldigt bra verktyg för att få en överblick över hur väl arbetad ens kod är samt om det finns några sårbarheter. Jag tror att det är mycket användbart när man arbetar med större projekt som kräver en hög kodkvalitet för att försäkra en god säkerhet. Jag är dock lite skeptisk på om dessa badges visar en god överblick över kodkvaliteten; Scrutinazer visar 10.00 på min kod men jag har ändå flera komplexa klasser samt väldigt låg kodtäckning och PHPMetrics visar ändå tio varningar. Det får mig att tro att det betyget borde vara lite lägre.</p>
+    <p>Min TIL för detta kmom är att vara mer noga med att försöka hålla en god kodkvalitet från start. Se till att ha en hög kodtäckning och börja arbeta med det i god tid för att det inte ska bli allt för stort och komplicerat i slutet. Ständigt hålla koll på dessa verktyg för att upprätthålla en hög kodkvalitet under projektens gång.</p>
+<footer class="site-footer">
+    <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+</footer>
+
+{% endblock %}

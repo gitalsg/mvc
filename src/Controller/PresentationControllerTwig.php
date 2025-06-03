@@ -62,6 +62,12 @@ class PresentationControllerTwig extends AbstractController
         return $this->render('kmom05.html.twig');
     }
 
+    #[Route("/report#kmom06", name: "kmom06")]
+    public function kmom06(): Response
+    {
+        return $this->render('kmom06.html.twig');
+    }
+
     #[Route("/lucky", name: "lucky_number")]
     public function number(): Response
     {
