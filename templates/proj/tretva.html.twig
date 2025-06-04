@@ -1,0 +1,26 @@
+{% extends "proj/base.html.twig" %}
+
+{% block title %}Maternity{% endblock %}
+
+{% block body %}
+    <h1 class="proj-h1">Maternal mortality ratio</h1>
+
+<div style="max-width: 600px; height: 300px; margin: 0 auto;">
+    {{ render_chart(chart) }}
+</div>
+
+<div class="proj-parag">
+    <p>Indikator som presenteras här är den globala indikator för dödlighet för barn under fem år. Källa: Dödsorsaksregistret, Socialstyrelsen och Befolkningsstatistiken, SCB.</p>
+</div>
+
+<footer class="proj-footer">
+    <ul class="right-list">
+        <p>Information som finnes på denna webbplats har inhämtats från följande källor:</p>
+            <li><a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/produktrelaterat/Fordjupad-information/fakta-om-indikatorer-for-hallbar-utveckling/">Fakta om hållbar utveckling</a></li>
+            <li><a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/">Indikatorer för hållbar utveckling</a></li>
+            <li><a href="https://globalamalen.se/om-globala-malen/">Om globala målen</a></li>
+    </ul>
+
+    <p>&copy; A.S. Projekt för kursen Objektorienterade webbteknologier; MVC</p>
+</footer>
+{% endblock %}
