@@ -240,15 +240,25 @@ th, td {
     align-items: center;
     gap: 60px;
     max-width: 1200px;
-    padding: 40px;
+    padding: 30px;
 }
 
 .proj-text {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
 }
 
 .proj-pic {
     max-width: 100%;
     height: auto;
+}
+
+.proj-parag {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-items: baseline;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-radius: 10px;
 }
