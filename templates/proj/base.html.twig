@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Project!{% endblock %}</title>
         <link rel="icon" href="{{ asset('img/favicon.png') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -13,16 +13,18 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <header class="site-header" style="background-image: url({{ asset('img/headerpic.jpg') }})">
-            <span class="site-title">MVC</span>
+    <body class="proj-body">
+        <header class="proj-header">
 
         <nav>
             <ul>
-                <li><a href="{{ path('presentation') }}">Home</a></li>
-                <li><a href="{{ path('about') }}">About</a></li>
+                <li><a href="{{ path('project') }}">Home</a></li>
+                <li><a href="{{ path('about_proj') }}">About</a></li>
             </ul>
         </nav>
+
+            <span class="proj-title">Hållbar utveckling - Globala mål</span>
+
         </header>
         {% block body %}{% endblock %}
     </body>

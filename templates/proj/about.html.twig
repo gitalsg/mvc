@@ -3,17 +3,34 @@
 {% block title %}About Project{% endblock %}
 
 {% block body %}
-    <h1>About</h1>
+    <h1 class="proj-h1">About this project</h1>
 
-    <div class="container">
-        <section class="about-text">
-            <h2>Test</h2>
+    <div class="proj-container">
+        <section class="proj-text">
+            <h2>Projekt om hållbar utveckling:</h2>
 
-            <p>test</p>
+            <p>Detta projekt avser att marknadsföra Hållbar Utveckling och ge en inblick i vad det innebär och hur man kan åstadskomma en god utveckling för att uppnå de 17 globala områden satta av FN.</p>
+            <p>Genom att presentera ett av dessa mål lite mer på djupet är förhoppningen att ge en god inblick i vad det specifika målet innebär och vad man själv kan göra för att hjälpa till att uppnå denna. Meningen med de globala målen är att misnka ojämlikheter, främja rättvisa och fred samt avskaffa fattigdom.</p> 
+            <p>I de olika sidorna kommer du att hitta översiktlig information om alla 17 områden av de globala målen, ingående information av ett av de målen samt lite statistik och olika mätvärden för det området.</p>
+        </section>
+        <aside class="proj-pic">
+            <h3>17 Globala Mål</h3>
+
+            <a href="{{ asset('img/malen.png') }}">
+                <img src="{{ asset('img/malen.png') }}" alt="malen">
+            </a>
+        </aside>
     </div>
 
-    <footer class="site-footer">
-        <p>&copy; A.S. Objektorienterade webbteknologier; MVC</p>
+    <footer class="proj-footer">
+        <ul class="right-list">
+            <p>Mer information om de globala målen:</p>
+            <li><a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/produktrelaterat/Fordjupad-information/fakta-om-indikatorer-for-hallbar-utveckling/">Fakta om hållbar utveckling</a></li>
+            <li><a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/">Indikatorer för hållbar utveckling</a></li>
+            <li><a href="https://globalamalen.se/om-globala-malen/">Om globala målen</a></li>
+        </ul>
+
+        <p>&copy; A.S. Projekt för kursen Objektorienterade webbteknologier; MVC</p>
     </footer>
 
 {% endblock %}
