@@ -28,7 +28,7 @@ class ProjectController extends AbstractController
         return $this->render('proj/halsa.html.twig');
     }
 
-    #[Route('/diagram/mat', name: 'diagram_matern')]
+    #[Route('/proj/diag/mat', name: 'diagram_matern')]
     public function diagMaternity(ChartBuilderInterface $chartBuilder): Response
     {
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
@@ -51,7 +51,7 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/diagram/barn', name: 'diagram_barn')]
+    #[Route('/proj/diag/barn', name: 'diagram_barn')]
     public function diagBarn(ChartBuilderInterface $chartBuilder): Response
     {
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
