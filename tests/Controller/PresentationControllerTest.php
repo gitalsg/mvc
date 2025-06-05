@@ -68,7 +68,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom01()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom01');
+        $client->request('GET', '/report/kmom01');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -81,7 +81,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom02()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom02');
+        $client->request('GET', '/report/kmom02');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -94,7 +94,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom03()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom03');
+        $client->request('GET', '/report/kmom03');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -107,7 +107,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom04()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom04');
+        $client->request('GET', '/report/kmom04');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -120,7 +120,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom05()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom05');
+        $client->request('GET', '/report/kmom05');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -133,7 +133,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom06()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom06');
+        $client->request('GET', '/report/kmom06');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
@@ -146,7 +146,7 @@ class PresentationControllerTest extends WebTestCase
     public function testRouteKmom10()
     {
         $client = static::createClient();
-        $client->request('GET', '/report#kmom10');
+        $client->request('GET', '/report/kmom10');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('html');
