@@ -1,7 +1,7 @@
 ![Picture](./public/img/mvc.jpg)
 
 Kmom06 - badges
-----------------------------
+====================
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gitalsg/mvc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gitalsg/mvc/?branch=master)
 
@@ -11,7 +11,11 @@ Kmom06 - badges
 
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/gitalsg/mvc/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
-Information om kmom01
+Vad som finns i kursrepot
+----------------------------
+Det som finnes i detta repot är ett projekt för att lära sig använda Symfony och bygga upp en webbplats med hjälp av det. Det används olika verktyg för att kolla kodkvalitet och arbeta med att förbättra det för att uppnåg bra och stabil kod. Vertygen hjälpen en att se kodtäckning och värden som visar på sårbara delar som kan behövas förbättras för att uppnåg god kvalitet och säker kod. Man använder även vertyg för att fixa koden så att den följer vissa standard. Projektet består i sin helhet av olika webbsidor där det har tränats på att använda dessa hjälpsamma vertyg, bland annat PHPUnit, csfix, phpMetrics, för att uppnå hållbar kod bakom webbplatsen. Det finns applikationer där man exempelvis kan dra kort, spela, mm. Det finns en webbsida där man kan läsa om kodkvalitet samt ett en webbsida som leder till slutprojektet. I detta fall handlar slutprojektet om hållbarhet och visar lite mer i djupet hur kan jobba med hållbar utveckling.
+
+Information Symfony
 ====================
 
 Klona kursrepo
