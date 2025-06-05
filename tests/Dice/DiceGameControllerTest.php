@@ -27,7 +27,7 @@ class DiceGameControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $client->request('GET', '/game/pig/init');
-        
+
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('form');
     }
@@ -42,4 +42,3 @@ class DiceGameControllerTest extends WebTestCase
         $this->assertResponseRedirects('/game/pig/play');
     }
 }
-
